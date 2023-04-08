@@ -25,7 +25,7 @@ const Management = () => {
 
      useEffect(() => {
           let filtrList = list.filter((value) => value.status === "Pending");
-          console.log("initialRedner----filtrList", filtrList, "list", list);
+          // console.log("initialRedner----filtrList", filtrList, "list", list);
           setFilteredList(filtrList);
      }, [list]);
 
