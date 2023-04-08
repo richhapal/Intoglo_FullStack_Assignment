@@ -1,12 +1,15 @@
 const express = require("express");
-const validate = require("../../middlewares/validate");
-const authValidation = require("../../validations/auth.validation");
-const authController = require("../../controllers/auth.controller");
+
+const authJoiValidation = require("../middleware/validate.middleware");
+const { authSignInSchema, authSignUpSchema } = require("../validation/auth.validation");
+const { createNewUser, userLoginWithEmailAndPassword } = require("../controller/auth.controller");
 
 const router = express.Router();
 
-router.post("/signup", validate(authValidation.register), authController.signup);
-
-router.post("/signin", validate(authValidation.login), authController.signin);
+router.post("/signup", authJoiValidation(authSignUpSchema), createNewUser);
+// (req, res) => {
+//      res.json({ message: "User True" });
+// };
+router.post("/signin", authJoiValidation(authSignInSchema), userLoginWithEmailAndPassword);
 
 module.exports = router;
