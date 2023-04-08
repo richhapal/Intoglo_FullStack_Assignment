@@ -8,7 +8,7 @@ import { wrap } from "framer-motion";
 const Management = () => {
      const [list, setList] = useState([]);
      const [filteredList, setFilteredList] = useState([]);
-     const [tabIndex, setTabIndex] = useState(0);
+     // const [tabIndex, setTabIndex] = useState(0);
      const location = useLocation();
      // console.log("location", location);
      const { name, userType, email, _id, token } = location.state;
@@ -20,10 +20,14 @@ const Management = () => {
                     // console.log("getList---", list);
                     setList(list);
                })();
-               let filtrList = list.filter((value) => value.status === "Pending");
-               setFilteredList(filtrList);
           }
      }, [name]);
+
+     useEffect(() => {
+          let filtrList = list.filter((value) => value.status === "Pending");
+          console.log("initialRedner----filtrList", filtrList, "list", list);
+          setFilteredList(filtrList);
+     }, [list]);
 
      const handleRejectOrApprovedList = (newList) => {
           // console.log("newlist", list);

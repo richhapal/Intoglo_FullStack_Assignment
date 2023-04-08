@@ -1,4 +1,4 @@
-import {} from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 
 import SignPage from "./components/SignPage";
 import Profile from "./components/Profile";
@@ -14,9 +14,11 @@ const router = createBrowserRouter([
      {
           path: "/profile",
           element: <Profile />,
+          errorElement: <Heading size={"sm"}>Please SingUp</Heading>,
      },
      {
           path: "/management",
+          errorElement: <Heading size={"sm"}>Unauthorized</Heading>,
           element: <Management />,
      },
 ]);
