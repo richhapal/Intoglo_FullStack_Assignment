@@ -4,7 +4,7 @@ class TokenService {
      generateToken = async (id, type) => {
           const token = await Jwt.sign({ id, type }, config.jwt.secret, { expiresIn: config.jwt.accessExpirationMinutes * 60 });
           const expires = new Date(Date.now() + config.jwt.accessExpirationMinutes * 60 * 1000).toLocaleTimeString();
-          console.log("token", token);
+          // console.log("token", token);
           return { token, expires };
      };
      verifyToken = async (token) => {

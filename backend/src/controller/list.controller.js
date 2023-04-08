@@ -5,12 +5,13 @@ const httpStatus = require("http-status");
 const createNewList = async (req, res) => {
      try {
           const newList = await ListServiceInstance.createList(req.body);
-          // console.log("newLIst", newList);
-          if (!newList.message) {
-               res.status(httpStatus.CREATED).json(newList);
-          } else {
-               res.status(httpStatus.UNAUTHORIZED).json(newList);
-          }
+          res.json(newList);
+          console.log("newLIst", newList);
+          // if (!newList.message) {
+          //      res.status(httpStatus.CREATED).json(newList);
+          // } else {
+          //      res.status(httpStatus.NO_CONTENT).json(newList);
+          // }
      } catch (e) {
           res.json(e);
      }
@@ -21,12 +22,8 @@ const getList = async (req, res) => {
           const { userType } = req.params;
           console.log("userType", userType, req.body.email);
           const getList = await ListServiceInstance.getList(userType, req.body.email);
-          if (getList.length == 0) {
-               res.status(httpStatus.UNAUTHORIZED).json({ message: "Unauthorized User" });
-          } else {
-               res.json(getList);
-          }
-          // console.log("getList", getList);
+          console.log("getLIst", getList);
+          res.status(httpStatus.OK).json(getList);
      } catch (e) {
           res.json(e);
      }
