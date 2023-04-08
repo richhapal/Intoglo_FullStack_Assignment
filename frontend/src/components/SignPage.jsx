@@ -126,7 +126,7 @@ const SignPage = () => {
                                    {whichTab === "signup" && (
                                         <FormControl isRequired>
                                              <FormLabel htmlFor="userType">Registered As</FormLabel>
-                                             <RadioGroup onChange={(e) => setUserType(e.target.value)} value={userType} id="userType">
+                                             <RadioGroup onChange={setUserType} value={userType} id="userType">
                                                   <Stack direction="row">
                                                        <Radio value="user" defaultChecked>
                                                             User
