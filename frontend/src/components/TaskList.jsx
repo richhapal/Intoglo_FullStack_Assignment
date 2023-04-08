@@ -26,7 +26,7 @@ const TaskList = (props) => {
      };
 
      return (
-          <Box border="2px" w={"sm"} maxWidth={"sm"} borderRadius="md" padding={3}>
+          <Box border="2px" w={"xs"} borderRadius="md" padding={3}>
                <VStack align gap={1}>
                     <HStack>
                          <Text>UserName :</Text>
