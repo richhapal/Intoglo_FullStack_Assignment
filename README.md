@@ -1,3 +1,43 @@
-<h2>Intoglo_FullStack_Assignment</h2>
+# INTOGLO FULL STACK ASSIGNMENT
 
-<a href="https://intoglo.up.railway.app">BackendDeploy:https://intoglo.up.railway.app</a>
+## Please Use Email & Password For Admin
+
+```bash
+  Email: admin@gmail.com
+```
+
+```bash
+  Password: 12345678
+```
+
+## Instruction To Run Project
+
+In the project directory, you can run:
+
+### Backend End Start
+
+```bash
+  cd backend
+```
+
+```bash
+  npm install
+```
+
+```bash
+  npm start
+```
+
+### Frontend
+
+```bash
+  cd Frontend
+```
+
+```bash
+  npm install
+```
+
+```bash
+  npm start
+```
